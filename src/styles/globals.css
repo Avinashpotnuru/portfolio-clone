@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:ital,wght@0,100;0,500;0,700;1,100;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Roboto+Slab:wght@500&family=Roboto:ital,wght@0,100;0,500;0,700;1,100;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px); 
+ 
+}
+
+.content {
+  /* From https://css.glass */
+background: rgba(22, 22, 22, 0.63);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(16.9px);
+-webkit-backdrop-filter: blur(16.9px);
+
+
+
+}
+body{
+  --def: black; 	
+	--inv: #fff;
+ 
+  
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+ 
+ 
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(59, 160, 238);
+  border-radius: 5px;
+  
+}
+
+.overflow-desk::-webkit-scrollbar {
+  height: 6px !important;
+  width: 200px !important;
+}
+
+
+
+
+
+.contact {
+    border: none;
+    padding: 10px ;
+   
+    position: relative;
+    background: transparent;
+    color: black;
+    text-transform: uppercase;
+    border: 3px solid black;
+    cursor: pointer;
+    transition: all 0.7s;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .contact:hover {
+    color: white;
+  }
+  span {
+    transition: all 0.7s;
+    z-index: -1;
+  }
+
+  .contact .first {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: black;
+  }
+
+  .contact:hover .first {
+    top: 0;
+    right: 0;
+  }
+  .contact .second {
+    content: "";
+    position: absolute;
+    left: 25%;
+    top: -100%;
+    height: 100%;
+    width: 25%;
+    background: black;
+  }
+
+  .contact:hover .second {
+    top: 0;
+    left: 50%;
+  }
+
+  .contact .third {
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    top: 100%;
+    width: 25%;
+    background: black;
+  }
+
+  .contact:hover .third {
+    top: 0;
+    left: 25%;
+  }
+
+  .contact .fourth {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: black;
+  }
+
+  .contact:hover .fourth {
+    top: 0;
+    left: 0;
+  }
+
+  .btn {		
+    position: relative;	
+    padding:8px;
+  
+    font-size: 15px;
+    color: var(--inv);
+  
+    text-transform: uppercase;
+    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .btn:before, .btn:after {
+    content: '';
+    position: absolute;	
+    transition: inherit;
+    z-index: -1;
+  }
+  
+  .btn:hover {
+    color: var(--def);
+    transition-delay: .5s;
+  }
+  
+  .btn:hover:before {
+    transition-delay: 0s;
+    color: black;
+  }
+  
+  .btn:hover:after {
+    background: var(--inv);
+    transition-delay: .35s;
+  }
+  
+
+
+  .from-left:before, 
+  .from-left:after {
+    top: 0;
+    width: 0;
+    height: 100%;
+  }
+  
+  .from-left:before {
+    right: 0;
+    border: 1px solid var(--inv);
+    border-left: 0;
+    border-right: 0;	
+  }
+  
+  .from-left:after {
+    left: 0;
+  }
+  
+  .from-left:hover:before,
+  .from-left:hover:after {
+    width: 100%;
+  }
+
+
+
+
+
+  
+.card {
+  
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  
+  box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card > img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s;
+}
+
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.button-background-move {
+  font-size: 16px;
+ 
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-background-move:after {
+  content: "";
+  background-color: #0c7fb0;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-background-move:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+
+
+
+.submitbutton{
+  padding: 15px 40px;
+  background: #000;
+  border:0;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: helvetica;
+  font-size: 12px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+}
+
+.submitbutton::after,
+.submitbutton::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-20%);
+    opacity: 0;
+  transition:all .4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.submitbutton::after{
+    width: 30px;
+    height: 1px;
+    background: white;
+    transform: translateX(-3px);
+    margin-top: 0px;
+}
+
+.submitbutton::before{
+    content: "";
+    transform: rotate(-135deg) translateX(50%);
+    width: 11px;
+    height: 11px;
+    background: transparent;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+  margin-top: -1px;
+}
+
+
+.submitbutton:hover{
+  padding: 15px 60px 15px 20px;
+}
+
+.submitbutton:hover::after,
+.submitbutton:hover::before{
+  opacity: 1;
+  right: 15px;
+}
+
