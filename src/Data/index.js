@@ -23,7 +23,7 @@ export const projectsData = [
     id: 1,
     imgUrl: "/resturaant.webp",
     title: "Restaurant Website",
-    description: `It is a restaurant's website. Along with the ability to reserve a table, this app allows users to view the meal menu,`,
+    description: `It is a restaurant's website.Along with the ability to reserve a table, this app allows users to view the meal menu,`,
     category: "react",
     Link: "/projects/restaurant",
     deploylink: "",
