@@ -11,6 +11,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { closeDetailsPopup } from "@/src/store/slices/popup";
 
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 
 const DetailsPopup = () => {
   const dispatch = useDispatch();
@@ -34,22 +35,18 @@ const DetailsPopup = () => {
         // },
         // body: JSON.stringify({ ...details }),
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        // console.log("res", res);
+        if (res.status) {
+          toast.success("details send successfully");
+        }
+      })
+      .catch((err) => {
+        // console.log(err);
+        toast.error("details not send successfully");
+      });
     setToggle(true);
     console.log("haiii");
-
-    // fetch("/api/client-details", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ ...data }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data));
-
-    // console.log(details);
   };
   return (
     <Modal

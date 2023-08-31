@@ -32,7 +32,7 @@ const ProjectInfoPages = () => {
 
   if (!pageToRender[id]) return null;
 
-  console.log(router);
+  //console.log(router);
 
   return (
     <Fade>

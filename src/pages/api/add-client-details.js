@@ -23,7 +23,7 @@ export default function (req, res) {
         await client.save();
         res.json(await Details.find());
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
     postData();

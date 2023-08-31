@@ -38,7 +38,7 @@ const ProjectDetailPage = ({ data }) => {
           <div className=" w-[90%] mx-auto overflow-x-auto overflow-desk  ">
             <div className="flex space-x-4  w-[120%] sm:w-full mx-auto  py-2 ">
               {data?.technologies.map((val, idx) => {
-                console.log("val", val);
+                //console.log("val", val);
                 return (
                   <div className="my-auto text-[60px]" key={idx}>
                     {val?.icon}
