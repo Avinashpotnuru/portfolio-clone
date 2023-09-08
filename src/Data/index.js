@@ -3,7 +3,7 @@ import { BsFillBootstrapFill } from "react-icons/bs";
 
 import { DiCss3, DiReact } from "react-icons/di";
 import { FaFigma, FaBootstrap } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 
 import {
   TbBrandTailwind,
@@ -112,11 +112,11 @@ const portfolio = {
     { icon: <TbBrandTailwind /> },
     { icon: <DiReact /> },
     { icon: <TbBrandNextjs /> },
+    { icon: <SiMongodb /> },
     { icon: <TbBrandRedux /> },
-    { icon: <FaFigma /> },
   ],
 
-  description: `Developed In this project, which uses HTML, CSS, JavaScript, and React, I have contributed
+  description: `Developed In this project, which uses HTML, CSS, JavaScript,  Next.js and Mongo db .I have contributed
     information about myself, my education, and my projects. Users can view this information in the app. This app
     also has responsive features..`,
   projectLink: "https://avinashpotnuruportfolio.netlify.app/",

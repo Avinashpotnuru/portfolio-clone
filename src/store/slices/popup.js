@@ -30,7 +30,7 @@ const popSlice = createSlice({
     },
 
     openDetailsPopup: (state, action) => {
-      console.log("action", action.payload);
+      //console.log("action", action.payload);
       state.detailsPopup.status = true;
       state.detailsPopup.helperData = action.payload;
     },
