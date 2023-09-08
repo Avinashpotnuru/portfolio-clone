@@ -18,11 +18,11 @@ const ProjectDetailPage = ({ data }) => {
         </button>
       </Link>
       <div className="flex flex-col sm:flex-row my-4 ">
-        <div className="sm:w-1/2  sm:flex sm:justify-center sm:items-center ">
+        <div className="sm:w-1/2 my-auto sm:flex sm:justify-center sm:items-center ">
           <Image
             height={500}
             width={500}
-            className="w-[95%] h-full  sm:h-[90%]  sm:my-auto  mx-auto object-fill "
+            className="w-[95%] h-full  sm:h-auto  sm:my-auto  mx-auto object-fill "
             src={data.imgUrl}
             alt="todo"
           />
@@ -38,9 +38,12 @@ const ProjectDetailPage = ({ data }) => {
           <div className=" w-[90%] mx-auto overflow-x-auto overflow-desk  ">
             <div className="flex space-x-4  w-[120%] sm:w-full mx-auto  py-2 ">
               {data?.technologies.map((val, idx) => {
-                //console.log("val", val);
+                console.log("val", val);
                 return (
-                  <div className="my-auto text-[60px]" key={idx}>
+                  <div
+                    className="my-auto hover:text-[#06b6d4] text-[60px] hover:scale-110 hover:-translate-y-1 transition duration-150 ease-in-out"
+                    key={idx}
+                  >
                     {val?.icon}
                   </div>
                 );
@@ -49,6 +52,14 @@ const ProjectDetailPage = ({ data }) => {
           </div>
 
           <h1 className="text-gray-500 my-2">{data?.description}</h1>
+          {data?.keypoints?.length && (
+            <ul className="list-disc p-4 space-y-1 text-gray-500">
+              {data?.keypoints?.map((val) => (
+                <li>{val}</li>
+              ))}
+            </ul>
+          )}
+
           {/* <div className="flex items-center mt-4">
             <BsGithub color="blue" size={12} />
             <a className="text-blue-500 hover:text-blue-700 ml-2 " href="">

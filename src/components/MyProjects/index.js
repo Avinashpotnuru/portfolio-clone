@@ -29,11 +29,11 @@ const MyProjects = () => {
           <ProjectCard data={item} key={idx} />
         ))}
       </motion.div>
-      <div className="flex justify-center items-center group my-4 ">
+      <div className="flex justify-center items-center group my-4  ">
         <Link href={"/projects"}>
-          <div className="bg-[#0c7fb0] font-roboto-slab  transition-all duration-1000  ease-in-out hover:bg-blue-700 flex justify-center items-center space-x-2 text-white  py-2 px-4 rounded">
+          <div className="bg-[#0c7fb0] font-roboto-slab   hover:bg-[#40bcf1] flex justify-center items-center space-x-2 text-white  py-2 px-4 rounded transition duration-700 ease-in-out ">
             <h1 className="">More Projects</h1>
-            <div className="hidden group-hover:block  transition-all duration-1000  ease-in-out  ">
+            <div className="hidden group-hover:block   ">
               <AiOutlineArrowRight className="" />
             </div>
           </div>

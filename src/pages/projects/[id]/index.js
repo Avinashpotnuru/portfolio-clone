@@ -15,6 +15,8 @@ const ProjectInfoPages = () => {
 
   const pageToRender = {
     "todo-list": pages?.todolist,
+    "movies-zone": pages?.moviesZone,
+
     "movies-app": pages?.moviesApp,
     restaurant: pages?.RestaurantWebsite,
     "food-munch": pages?.FoodMunch,

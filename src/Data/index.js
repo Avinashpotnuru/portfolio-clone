@@ -1,9 +1,9 @@
 import { AiFillHtml5 } from "react-icons/ai";
 import { BsFillBootstrapFill } from "react-icons/bs";
 
-import { DiCss3, DiReact } from "react-icons/di";
+import { DiCss3, DiReact, DiMongodb } from "react-icons/di";
 import { FaFigma, FaBootstrap } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
+import { SiJavascript, SiMongodb } from "react-icons/si";
 
 import {
   TbBrandTailwind,
@@ -40,6 +40,15 @@ export const projectsData = [
   },
   {
     id: 3,
+    imgUrl: "/movieszone.jpg",
+    title: "Movies Zone",
+    description: `Implemented responsive Movies Zone App where users can see movies details and trending ..`,
+    category: "react",
+    Link: "/projects/movies-zone",
+    deploylink: "https://avinashmoviesdbapp.netlify.app",
+  },
+  {
+    id: 4,
     imgUrl: "/moviesapp.png",
     title: "Movies App",
     description: `Implemented responsive OTT platform app like Netflix/Amazon Clone where users can see movies ,
@@ -50,7 +59,7 @@ export const projectsData = [
   },
 
   {
-    id: 4,
+    id: 5,
     imgUrl: "/foodmuch.png",
     title: "Food Munch",
     description: `Developed a responsive website for a Food Store where users can see a list of food items, detailed information`,
@@ -59,7 +68,7 @@ export const projectsData = [
     deploylink: "https://avinashfood1.ccbp.tech/",
   },
   {
-    id: 5,
+    id: 6,
     imgUrl: "/typemaster.png",
     title: "Typing Speed Test",
     description: `Developed an application that measured the time he took to complete a given paragraph
@@ -69,7 +78,7 @@ export const projectsData = [
     deploylink: "https://avinashspeed.ccbp.tech/",
   },
   {
-    id: 6,
+    id: 7,
     imgUrl: "/todo.png",
     title: "Todo App",
     description: `A comprehensive todo management tool designed to enhance productivity .
@@ -80,7 +89,7 @@ export const projectsData = [
     deploylink: "https://avi1todolist.ccbp.tech/",
   },
   {
-    id: 7,
+    id: 8,
     imgUrl: "/reacttodolist.png",
     title: "React Todo App",
     description: `A comprehensive todo management tool designed to enhance productivity .
@@ -112,14 +121,22 @@ const portfolio = {
     { icon: <TbBrandTailwind /> },
     { icon: <DiReact /> },
     { icon: <TbBrandNextjs /> },
-    { icon: <SiMongodb /> },
     { icon: <TbBrandRedux /> },
+    { icon: <SiMongodb /> },
   ],
 
-  description: `Developed In this project, which uses HTML, CSS, JavaScript,  Next.js and Mongo db .I have contributed
-    information about myself, my education, and my projects. Users can view this information in the app. This app
-    also has responsive features..`,
+  description: `Developed In this project, which uses HTML,Tailwind CSS, and React,Next.js. I have contributed
+    information about myself, my education, and my projects and skills. Users can view this information in the app. This app
+    also has responsive features.i have created Apis by using next.js Api and i have used mangoDb atlas cloud for sorting client details which are entered in this contact form. `,
   projectLink: "https://avinashpotnuruportfolio.netlify.app/",
+  keypoints: [
+    `Implemented different routes for features like  home, about,projects,certificates and contact by using next.js pages routing`,
+    `I have used functional components entire this project.`,
+    `I have used the redux toolkit for state management for the entire project`,
+    `I have used third-party packages like React icons, axios,react-hook-form.
+    `,
+    "I have used framer motion for animation's and scrolling effects",
+  ],
   githubLink: "",
   category: "react",
 };
@@ -137,6 +154,12 @@ const todolist = {
     Effortless task management through JavaScript-based CRUD operations with dynamic UI updates.
     Your tasks are always safe with local storage methods to ensure task persistence
     `,
+  keypoints: [
+    `User-friendly interface with HTML, CSS, and Bootstrap for ease of use.`,
+    `Effortless task management through JavaScript-based CRUD operations with dynamic UI updates`,
+    `Your tasks are always safe with local storage methods to ensure task persistence.`,
+  ],
+
   projectLink: "https://avi1todolist.ccbp.tech/",
   githubLink: "",
   category: "javascript",
@@ -153,9 +176,49 @@ const moviesApp = {
     { icon: <DiReact /> },
     { icon: <FaFigma /> },
   ],
-  description: `Implemented responsive OTT platform app like Netflix/Amazon Clone where users can see movies like popular,
-    trending, top-rated, and also can search movies and view specific movie details.`,
+  description: `Implemented responsive OTT platform app like Netflix/Amazon Clone where users can see movies popular, 
+  trending, and top-rated, and also can search movies and view specific movie details.`,
+  keypoints: [
+    `Implemented different routes for features like login, home, popular, and profile by using React Router 
+  components Route, Switch, and Link`,
+    `Implemented horizontal scrolling (In trending, top-rated, and originals sections) using React Third Party 
+  library called React Slick`,
+    `Used Figma mockups to implement UI-rich and pixel-perfect React components`,
+    `Explored open-source APIs for movies database and picked TMDb APIs for authentication, movies by 
+    category, and movie search APIs.`,
+    `Implemented username and password authentication and persisted login state using client storage`,
+    `Implemented a protected route to ensure only authenticated users can access the pages like user profile, 
+    movies by category, etc.`,
+  ],
   projectLink: "https://avinashmovieapp.ccbp.tech/",
+  githubLink: "",
+  category: "react",
+};
+
+const moviesZone = {
+  imgUrl: "/movieszone.jpg",
+  title: "Movies Zone",
+  technologies: [
+    { icon: <AiFillHtml5 /> },
+    { icon: <DiCss3 /> },
+    { icon: <TbBrandTailwind /> },
+    { icon: <DiReact /> },
+    { icon: <TbBrandNextjs /> },
+    { icon: <TbBrandRedux /> },
+  ],
+  description: `Implemented responsive Movie Zone where users can see movies popular, 
+  trending, and top-rated, and also can search movies and view specific movie details.`,
+  keypoints: [
+    `I used functional components entire this project.`,
+    `Implemented different routes by using next.js pages`,
+    ,
+    `Explored open-source APIs for movies database and picked TMDb APIs, movies by
+    category, and movie search APIs.`,
+    `I used the redux toolkit for state management for the entire project`,
+    `I have used third-party packages like React icons, React-player, and React pagination.
+    `,
+  ],
+  projectLink: "https://avinashmoviesdbapp.netlify.app",
   githubLink: "",
   category: "react",
 };
@@ -191,6 +254,12 @@ const FoodMunch = {
   ],
   description: `Developed a responsive website for Food Store where users can see a list of food items, detailed information
   about a food item, and offers.`,
+  keypoints: [
+    `Designed page using the following HTML structure elements like li, header, article, footer elements, and 
+    different bootstrap components to show different sections in the website and different bootstrap classes 
+    for responsiveness through the mobile-first approach.`,
+    `Implemented product youtube videos by using Bootstrap embed and model components`,
+  ],
   projectLink: "https://avinashfood1.ccbp.tech/",
   githubLink: "",
   category: "",
@@ -205,6 +274,16 @@ const typeMaster = {
     { icon: <FaBootstrap /> },
   ],
   description: ` Developed an application that measured the time he took to complete a given paragraph`,
+  keypoints: [
+    `Maintained timer by using APIs setTimeInterval, and clearTimeInterval and Updated timer in the UI 
+    dynamically using JavaScript DOM operations for every 1 second.
+    `,
+    `Fetched the paragraph from the server asynchronously using fetch GET HTTP API call and displayed it 
+    on UI by using JavaScript DOM Operations.`,
+    `Displayed time that the user took in the UI using JavaScript event listeners once the user clicked on 
+    submit button, Did form validations for incomplete paragraphs`,
+  ],
+
   projectLink: "https://avinashspeed.ccbp.tech/",
   githubLink: "",
   category: "javascript",
@@ -233,6 +312,7 @@ const reacttodolist = {
 export const pages = {
   todolist: todolist,
   moviesApp: moviesApp,
+  moviesZone: moviesZone,
   RestaurantWebsite: RestaurantWebsite,
   FoodMunch: FoodMunch,
   typeMaster: typeMaster,
