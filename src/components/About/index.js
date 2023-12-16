@@ -46,7 +46,7 @@ const About = () => {
           <a
             className="button-background-move w-[70%] lg:w-1/2 text-center  my-3"
             href="/AvinashPotnuruResume.pdf"
-            download="AvinashPotnuruResume.pdf"
+            download
           >
             <button>Download Resume</button>
           </a>

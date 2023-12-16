@@ -5,6 +5,8 @@ import React from "react";
 // third party imports
 
 import { motion } from "framer-motion";
+// import Image from "next/image";
+
 import Image from "next/image";
 
 const ProjectCard = ({ data }) => {
@@ -19,7 +21,7 @@ const ProjectCard = ({ data }) => {
       }}
       animate={{ opacity: 1, translateX: 0, translateY: 0 }}
       transition={{ delay: 1, duration: data.id * 0.3 }}
-      className=" h-[500px] sm:h-[490px]  md:h-[450px] lg:h-[400px] group bg-[#0c7fb0]  mx-auto shadow-2xl rounded-xl overflow-hidden "
+      className="h-[480px] sm:h-[490px]  md:h-[450px] lg:h-[400px] group bg-[#0c7fb0]  mx-auto shadow-2xl rounded-xl overflow-hidden "
     >
       <div className="h-1/2 overflow-hidden ">
         <Image
@@ -35,7 +37,7 @@ const ProjectCard = ({ data }) => {
         <h1 className="text-lg font-extrabold text-center group-hover:text-white  my-4 font-Lexend  ">
           {data?.title}
         </h1>
-        <h1 className="text-center group-hover:text-white">
+        <h1 className="text-center group-hover:text-white card__preview-text">
           {data?.description}
         </h1>
         <div className=" mt-5 sm:mt-4  md:flex md:justify-around md:items-center ">

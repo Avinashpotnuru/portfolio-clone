@@ -1,9 +1,8 @@
 import { AiFillHtml5 } from "react-icons/ai";
-import { BsFillBootstrapFill } from "react-icons/bs";
 
 import { DiCss3, DiReact, DiMongodb } from "react-icons/di";
 import { FaFigma, FaBootstrap } from "react-icons/fa";
-import { SiJavascript, SiMongodb } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 
 import {
   TbBrandTailwind,
@@ -14,8 +13,9 @@ import {
 
 export const tabs = [
   { id: 1, tab: "All", category: "" },
-  { id: 2, tab: "Java Script", category: "javascript" },
+  { id: 2, tab: "JavaScript", category: "javascript" },
   { id: 3, tab: "React", category: "react" },
+  { id: 4, tab: "Full Stack", category: "fullstack" },
 ];
 
 export const projectsData = [
@@ -32,8 +32,10 @@ export const projectsData = [
     id: 2,
     imgUrl: "/portfolio.png",
     title: "Personal Portfolio",
-    description: `Developed In this project, which uses HTML, CSS, JavaScript, and React, I have contributed
-    information `,
+    category: "react",
+    description: `Developed In this project, which uses HTML,Tailwind CSS, and React,Next.js. I have contributed
+    information about myself, my education, and my projects and skills. Users can view this information in the app. This app
+    also has responsive features.i have created Apis by using next.js Api and i have used mangoDb atlas cloud for sorting client details which are entered in this contact form. `,
     category: "react",
     Link: "/projects/portfolio",
     deploylink: "https://avinashpotnuruportfolio.netlify.app/",

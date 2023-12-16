@@ -33,7 +33,7 @@ const ProjectsFilter = () => {
           My Projects
         </motion.h1>
 
-        <div className="flex justify-center space-x-10 items-center my-9 sm:w-1/2">
+        <div className="flex justify-center md:space-x-10 space-y-2 items-center my-9 md:w-[79%]  mx-auto  ">
           {tabs.map((val, idx) => (
             <button
               onClick={() => setTabsId(val?.category)}
@@ -52,11 +52,19 @@ const ProjectsFilter = () => {
           ))}
         </div>
       </div>
-      <div className="mb-5 grid grid-cols-1 gap-4  sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 mx-auto w-[90%]  ">
-        {filterData.map((item, idx) => (
-          <ProjectCard data={item} key={idx} />
-        ))}
-      </div>
+      {filterData.length ? (
+        <div className="mb-5 grid grid-cols-1 gap-4  sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 mx-auto w-[90%]  ">
+          {filterData.map((item, idx) => (
+            <ProjectCard data={item} key={idx} />
+          ))}
+        </div>
+      ) : (
+        <div className="h-[300px] flex justify-center items-center">
+          <h1 className="text-red-600 font-semibold text-center m-auto">
+            No projects found
+          </h1>
+        </div>
+      )}
     </div>
   );
 };

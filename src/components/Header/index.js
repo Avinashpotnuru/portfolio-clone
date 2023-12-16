@@ -5,7 +5,11 @@ import React, { useState } from "react";
 // third party imports
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
+import { RiInformationLine, RiContactsBookLine } from "react-icons/ri";
+import { GrCertificate } from "react-icons/gr";
+import { FaRegUser } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { CiMedal } from "react-icons/ci";
 
 import { usePathname } from "next/navigation";
 import TextContainer from "../TextAnimationContainer";
@@ -14,11 +18,14 @@ const Header = () => {
   const path = usePathname();
   // console.log(path);
   let Links = [
-    { name: "HOME", link: "/" },
-    { name: "ABOUT", link: "/about" },
-    { name: "PROJECT'S", link: "/projects" },
-    { name: "CERTIFICATES", link: "/course-certificates" },
-    { name: "CONTACT", link: "/contact-us" },
+    { name: "HOME", link: "/", icon: <FaRegUser /> },
+    { name: "ABOUT", link: "/about", icon: <RiInformationLine /> },
+    {
+      name: "CERTIFICATES",
+      link: "/course-certificates",
+      icon: <CiMedal />,
+    },
+    { name: "CONTACT", link: "/contact-us", icon: <RiContactsBookLine /> },
   ];
   let [open, setOpen] = useState(false);
 
@@ -51,30 +58,35 @@ const Header = () => {
           }`}
         >
           {Links.map((link, idx) => (
-            <motion.li
-              initial={{ y: -500 }}
-              animate={{ y: 0 }}
-              transition={{
-                delay: 1,
-                duration: 1.2,
-                type: "spring",
-                shiftiness: 140,
-              }}
-              onClick={() => setOpen(false)}
-              key={link.name}
-              className={`md:ml-8 text-lg md:my-0 my-7 font-roboto ${
-                path == link.link
-                  ? " sm:border-[#0c7fb0] sm:border-b-2 font-bold pb-1"
-                  : ""
-              }`}
-            >
-              <Link
-                href={link.link}
-                className="text-gray-800 hover:text-gray-400 duration-500"
+            <li key={idx} className="flex items-baseline ">
+              <div className="md:hidden text-[21px] text-[#0c7fb0] transition ease-in-out delay-150 hover:mb-2 hover:scale-105">
+                {link?.icon}
+              </div>
+              <motion.div
+                initial={{ y: -500 }}
+                animate={{ y: 0 }}
+                transition={{
+                  delay: 1,
+                  duration: 1.2,
+                  type: "spring",
+                  shiftiness: 140,
+                }}
+                onClick={() => setOpen(false)}
+                key={link.name}
+                className={` ml-2 md:ml-8 text-lg md:my-0 my-4 font-roboto ${
+                  path == link.link
+                    ? " sm:border-[#0c7fb0] sm:border-b-2 font-bold pb-1"
+                    : ""
+                }`}
               >
-                {link.name}
-              </Link>
-            </motion.li>
+                <Link
+                  href={link.link}
+                  className="text-gray-800 hover:text-gray-400 duration-500"
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
+            </li>
           ))}
         </ul>
       </div>
