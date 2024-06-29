@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 import { AiOutlineClose } from "react-icons/ai";
 
 import {
-  openContactPopup,
   closeContactPopup,
   openDetailsPopup,
 } from "@/src/store/slices/popup";

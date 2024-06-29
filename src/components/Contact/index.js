@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { openContactPopup } from "@/src/store/slices/popup";
 
 import { motion } from "framer-motion";
-import TextContainer from "../TextAnimationContainer";
 
 //icon Variants
 

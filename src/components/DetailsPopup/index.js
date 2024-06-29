@@ -4,6 +4,8 @@ import axios from "axios";
 
 import Modal from "../UI/Model";
 
+import emailjs from "@emailjs/browser";
+
 // third party imports
 
 import { AiOutlineClose } from "react-icons/ai";
@@ -27,26 +29,38 @@ const DetailsPopup = () => {
   const stringfyDetails = JSON.stringify(details);
 
   const postToBackend = () => {
-    axios
-      .post("/api/add-client-details", {
-        ...details,
-        // headers: {
-        //   "Content-Type": "application/json",
-        // },
-        // body: JSON.stringify({ ...details }),
-      })
-      .then((res) => {
-        // console.log("res", res);
-        if (res.status) {
-          toast.success("details send successfully");
+    // axios
+    //   .post("/api/add-client-details", {
+    //     ...details,
+    //     // headers: {
+    //     //   "Content-Type": "application/json",
+    //     // },
+    //     // body: JSON.stringify({ ...details }),
+    //   })
+    //   .then((res) => {
+    //     // console.log("res", res);
+    //     if (res.status) {
+    //       toast.success("details send successfully");
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     // console.log(err);
+    //     toast.error("details not send successfully");
+    //   });
+    console.log(details, "details");
+    emailjs
+      .send("service_qbh8knf", "template_zm935ps", details, "ZvDU2BAeaeAAet33r")
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Details sent successfully");
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Failed to send details");
         }
-      })
-      .catch((err) => {
-        // console.log(err);
-        toast.error("details not send successfully");
-      });
+      );
     setToggle(true);
-    console.log("haiii");
   };
   return (
     <Modal

@@ -1,7 +1,5 @@
 import React from "react";
 
-import { FaUserTie } from "react-icons/fa";
-import { IoCall } from "react-icons/io";
 
 // const FaUserTie = contactDetails[1];
 

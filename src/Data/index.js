@@ -351,7 +351,7 @@ export const experienceData = [
 
 export const skillsData = [
   "HTML",
-  "Css",
+  "CSS",
   "Bootstrap",
   "Javascript",
   "ReactJs",
