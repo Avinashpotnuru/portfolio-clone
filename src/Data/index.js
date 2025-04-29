@@ -9,6 +9,7 @@ import {
   TbBrandNextjs,
   TbBrandJavascript,
 } from "react-icons/tb";
+import { BsFacebook, BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
 
 export const tabs = [
   { id: 1, tab: "All", category: "" },
@@ -388,7 +389,7 @@ export const educationDetails = [
   {
     id: 1,
     name: "Nxtwave Disruptive Technologies",
-    duration: "2022 - 2023",
+    duration: "2019 - 2020",
     course: "Industry Ready Certification in Full-stack Development",
     location: "Hyderabad, Telangana, India",
   },
@@ -453,5 +454,27 @@ export const certificateData = [
   {
     name: "Responsive Web Design using Flex box",
     link: "https://certificates.ccbp.in/intensive/flexbox?id=DBPXFIMNPQ",
+  },
+];
+
+export const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+];
+
+export const socialLinks = [
+  { href: "https://github.com/Avinashpotnuru", icon: <BsGithub size={34} /> },
+  {
+    href: "https://www.linkedin.com/in/avinash-potnuru/",
+    icon: <BsLinkedin size={34} />,
+  },
+  {
+    href: "https://www.instagram.com/potnuru_avinash/",
+    icon: <BsInstagram size={34} />,
+  },
+  {
+    href: "https://www.facebook.com/avinash.potnuru.18",
+    icon: <BsFacebook size={34} />,
   },
 ];

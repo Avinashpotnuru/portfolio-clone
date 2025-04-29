@@ -27,15 +27,15 @@ const CertificateCard = ({ data, id }) => {
         alt=""
       />
 
-      <div className="info flex flex-col justify-center items mx-auto  ">
-        <h1 className="text-black font-bold my-5 text-2xl text-center font-Lexend ">
+      <div className="flex flex-col justify-center mx-auto info items ">
+        <h1 className="my-5 text-2xl font-bold text-center text-black font-Lexend ">
           {data?.name}
         </h1>
 
         <a
           href={data?.link}
           target="_blank"
-          className="text-black   hover:font-medium hover:border-t-2 hover:border-b-2 hover:py-1 hover:border-black  hover:transition-all duration-500 "
+          className="text-black duration-500 hover:font-medium hover:border-t-2 hover:border-b-2 hover:py-1 hover:border-black hover:transition-all "
         >
           Certification Link
         </a>

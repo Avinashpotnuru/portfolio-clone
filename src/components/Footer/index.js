@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import { BsGithub, BsLinkedin, BsInstagram, BsFacebook } from "react-icons/bs";
+import { navLinks, socialLinks } from "@/src/Data";
 
 const iconVariants = {
   hover: {
@@ -20,56 +20,38 @@ const iconVariants = {
   },
 };
 
+
+
+
 const Footer = () => {
   return (
     <div className="bg-[#061820] w-full text-white py-5 ">
       <div className="sm:w-[80%] md:w-[70%] lg:w-[30%] sm:mx-auto">
-        <div className="flex justify-around items-center py-5  ">
-          <h1 className="hover:text-[#4e4ee1] hover:font-roboto-slab  ">
-            <Link href={"/"}>Home</Link>
-          </h1>
-          <h1 className="hover:text-[#4e4ee1] hover:font-roboto-slab ">
-            <Link href={"/about"}>About</Link>
-          </h1>
-          <h1 className="hover:text-[#4e4ee1] hover:font-roboto-slab ">
-            <Link href={"/projects"}>Projects</Link>
-          </h1>
+        <div className="flex items-center justify-around py-5">
+          {navLinks.map((link) => (
+            <h1
+              key={link.href}
+              className="hover:text-[#4e4ee1] hover:font-roboto-slab"
+            >
+              <Link href={link.href}>{link.label}</Link>
+            </h1>
+          ))}
         </div>
-        <div className="flex justify-around items-center py-5 ">
-          <motion.a
-            variants={iconVariants}
-            whileHover="hover"
-            href="https://github.com/Avinashpotnuru"
-            target="_blank"
-          >
-            <BsGithub size={34} />
-          </motion.a>
-          <motion.a
-            variants={iconVariants}
-            whileHover="hover"
-            href="https://www.linkedin.com/in/avinash-potnuru/"
-            target="_blank"
-          >
-            <BsLinkedin size={34} />
-          </motion.a>
-          <motion.a
-            variants={iconVariants}
-            whileHover="hover"
-            href="https://www.instagram.com/potnuru_avinash/"
-            target="_blank"
-          >
-            <BsInstagram size={34} />
-          </motion.a>
-          <motion.a
-            variants={iconVariants}
-            whileHover="hover"
-            href="https://www.facebook.com/avinash.potnuru.18"
-            target="_blank"
-          >
-            <BsFacebook size={34} />
-          </motion.a>
+        <div className="flex items-center justify-around py-5">
+          {socialLinks.map((link) => (
+            <motion.a
+              key={link.href}
+              variants={iconVariants}
+              whileHover="hover"
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link.icon}
+            </motion.a>
+          ))}
         </div>
-        <h1 className="text-center py-4 px-5">
+        <h1 className="px-5 py-4 text-center">
           Copyright ©2023{" "}
           <span className="font-roboto-slab text-base hover:text-[#4e4ee1]">
             Avinash Potnuru

@@ -95,7 +95,7 @@ const Contact = () => {
               <FaUserAlt size={50} />
             </motion.div>
           </motion.div>
-          <h1 className="sm:text-2xl font-semibold font-Lexend text-center">
+          <h1 className="font-semibold text-center sm:text-2xl font-Lexend">
             Avinash Potnuru
           </h1>
         </motion.div>
@@ -120,7 +120,7 @@ const Contact = () => {
               <MdCall size={50} />
             </div>
           </motion.div>
-          <h1 className="sm:text-2xl font-semibold text-center font-Lexend">
+          <h1 className="font-semibold text-center sm:text-2xl font-Lexend">
             8919016096
           </h1>
         </motion.div>
@@ -146,14 +146,14 @@ const Contact = () => {
             </div>
           </motion.div>
           <div className="max-w-[90%] flex justify-center items-center  sm:hidden ">
-            <h1 className="sm:text-2xl font-semibold  text-center font-Lexend  ">
+            <h1 className="font-semibold text-center sm:text-2xl font-Lexend ">
               potnuruavinash111
               <br />
               @gmail.com
             </h1>
           </div>
           <div className="max-w-[90%] justify-center items-center  flex ">
-            <h1 className="sm:text-2xl font-semibold  text-center hidden sm:block font-Lexend  ">
+            <h1 className="hidden font-semibold text-center sm:text-2xl sm:block font-Lexend ">
               potnuruavinash111 @gmail.com
             </h1>
           </div>
@@ -168,7 +168,7 @@ const Contact = () => {
           className="bg-[#e1e1e1] shadow-md flex flex-col justify-center items-center py-5  "
         >
           <motion.div className="my-4">
-            <h1 className="sm:text-2xl font-semibold text-center font-Lexend">
+            <h1 className="font-semibold text-center sm:text-2xl font-Lexend">
               Follow{" "}
             </h1>
           </motion.div>
@@ -178,6 +178,7 @@ const Contact = () => {
               whileHover="hover"
               href="https://github.com/Avinashpotnuru"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <BsGithub size={25} />
             </motion.a>
@@ -186,6 +187,7 @@ const Contact = () => {
               whileHover="hover"
               href="https://www.linkedin.com/in/avinash-potnuru/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <BsLinkedin size={25} />
             </motion.a>
@@ -195,6 +197,7 @@ const Contact = () => {
               whileHover="hover"
               href="https://www.instagram.com/potnuru_avinash/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <BsInstagram size={25} />
             </motion.a>
@@ -203,13 +206,14 @@ const Contact = () => {
               whileHover="hover"
               href="https://www.facebook.com/avinash.potnuru.18"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <BsFacebook size={25} />
             </motion.a>
           </div>
         </motion.div>
       </div>
-      <div className=" flex justify-center items-center my-3 ">
+      <div className="flex items-center justify-center my-3 ">
         <button
           onClick={() => dispatch(openContactPopup())}
           className="contact"

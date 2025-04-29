@@ -1,15 +1,7 @@
-import React, { useState } from "react";
-
-//import components
-
+import React, { memo, useState } from "react";
 import ProjectCard from "../ProjectCard";
-
 import { tabs, projectsData } from "@/src/Data";
-
-// third party imports
-
 import { motion } from "framer-motion";
-import TextContainer from "../TextAnimationContainer";
 
 const ProjectsFilter = () => {
   const [tabsId, setTabsId] = useState("");
@@ -18,12 +10,26 @@ const ProjectsFilter = () => {
     ? projectsData
     : projectsData.filter((item) => item.category === tabsId);
 
-  // console.log(filterData);
-  // console.log(tabsId);
+ 
+  const Tab = ({ val, isActive, onClick }) => (
+    <button
+      onClick={onClick}
+      className={` text-black  py-2 px-4 rounded font-Lexend
+
+      ${
+        isActive
+          ? "border-[#0c7fb0] border-b-2  pb-2 font-extrabold"
+          : "font-medium"
+      }
+      `}
+    >
+      {val.tab}
+    </button>
+  );
 
   return (
     <div>
-      <div className="flex flex-col sm:flex-row w-full sm:justify-around sm:items-center">
+      <div className="flex flex-col w-full sm:flex-row sm:justify-around sm:items-center">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -35,32 +41,24 @@ const ProjectsFilter = () => {
 
         <div className="flex justify-center md:space-x-10 space-y-2 items-center my-9 md:w-[79%]  mx-auto  ">
           {tabs.map((val, idx) => (
-            <button
-              onClick={() => setTabsId(val?.category)}
-              className={` text-black  py-2 px-4 rounded font-Lexend
-              
-              ${
-                tabsId == val.category
-                  ? "border-[#0c7fb0] border-b-2  pb-2 font-extrabold"
-                  : "font-medium"
-              }
-              `}
+            <Tab
               key={idx}
-            >
-              {val.tab}
-            </button>
+              val={val}
+              isActive={tabsId === val.category}
+              onClick={() => setTabsId(val?.category)}
+            />
           ))}
         </div>
       </div>
       {filterData.length ? (
         <div className="mb-5 grid grid-cols-1 gap-4  sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 mx-auto w-[90%]  ">
           {filterData.map((item, idx) => (
-            <ProjectCard data={item} key={idx} />
+            <MemoizedProjectCard data={item} key={idx} />
           ))}
         </div>
       ) : (
         <div className="h-[300px] flex justify-center items-center">
-          <h1 className="text-red-600 font-semibold text-center m-auto">
+          <h1 className="m-auto font-semibold text-center text-red-600">
             No projects found
           </h1>
         </div>
@@ -68,5 +66,7 @@ const ProjectsFilter = () => {
     </div>
   );
 };
+
+const MemoizedProjectCard = memo(ProjectCard);
 
 export default ProjectsFilter;

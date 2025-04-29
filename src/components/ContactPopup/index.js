@@ -8,10 +8,7 @@ import Modal from "../UI/Model";
 import { motion } from "framer-motion";
 import { AiOutlineClose } from "react-icons/ai";
 
-import {
-  closeContactPopup,
-  openDetailsPopup,
-} from "@/src/store/slices/popup";
+import { closeContactPopup, openDetailsPopup } from "@/src/store/slices/popup";
 import TextContainer from "../TextAnimationContainer";
 
 const inputVariants = {
@@ -55,6 +52,11 @@ const ContactPopup = () => {
     reset();
   };
 
+  const handleClose = () => {
+    dispatch(closeContactPopup());
+    reset();
+  };
+
   return (
     <Modal
       parentClasses={" flex justify-center items-center  w-full m-auto"}
@@ -62,10 +64,7 @@ const ContactPopup = () => {
     >
       <div className="relative bg-slate-200   w-[95%] min-h-[90%] sm:h-[500px] sm:w-[500px] flex flex-col justify-center items-center">
         <div
-          onClick={() => {
-            dispatch(closeContactPopup());
-            reset();
-          }}
+          onClick={handleClose}
           className="absolute  top-7 right-7 hover:text-[20px]"
         >
           <AiOutlineClose />
@@ -100,6 +99,7 @@ const ContactPopup = () => {
                 },
               })}
               placeholder="First name"
+              aria-label="Full Name"
             />
             <p className="my-1 font-semibold text-red-600">
               {errors.firstName?.message}
@@ -140,18 +140,7 @@ const ContactPopup = () => {
               className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
               {...register("number", {
                 required: "Phone number is required",
-                minLength: {
-                  value: 10,
-                  message: "Phone number must be 10 digits",
-                },
-                maxLength: {
-                  value: 10,
-                  message: "Phone number must be 10 digits",
-                },
-                pattern: {
-                  value: /^\d{10}$/,
-                  message: "Phone number must contain only digits",
-                },
+                validate: validatePhoneNumber,
               })}
               maxLength={10}
               placeholder="Enter your phone number"

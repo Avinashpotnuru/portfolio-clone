@@ -1,11 +1,10 @@
+import React, { memo } from "react";
 import React from "react";
-
 import { motion } from "framer-motion";
-
 import Image from "next/image";
-
 import { skillsData } from "@/src/Data";
-const Skills = () => {
+
+const Skills = memo(() => {
   return (
     <div className="flex flex-col items-center justify-center w-full mx-auto my-5 overflow-hidden">
       <motion.h1
@@ -26,31 +25,33 @@ const Skills = () => {
           Skills
         </motion.h1>
         <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-          {skillsData.map((item, idx) => (
-            <motion.div
-              initial={{
-                scale: 0,
-                opacity: 0,
-                translateX: idx % 2 == 1 ? "-100vh" : "100vh",
-              }}
-              animate={{ scale: 1, opacity: 1, translateX: 0 }}
-              transition={{ delay: idx * 0.5, duration: idx * 0.3 }}
-              key={idx}
-              className="flex flex-col items-center justify-center p-9"
-            >
-              <Image
-                width={120}
-                height={120}
-                src={`/skills/skills${idx + 1}.png`}
-                alt={`skills${idx + 1}`}
-              />
-              <h1 className="my-2 font-semibold text-center">{item}</h1>
-            </motion.div>
-          ))}
+          {Array.isArray(skillsData) && skillsData.length > 0
+            ? skillsData.map((item, idx) => (
+                <motion.div
+                  initial={{
+                    scale: 0,
+                    opacity: 0,
+                    translateX: idx % 2 == 1 ? "-100vh" : "100vh",
+                  }}
+                  animate={{ scale: 1, opacity: 1, translateX: 0 }}
+                  transition={{ delay: idx * 0.5, duration: idx * 0.3 }}
+                  key={idx}
+                  className="flex flex-col items-center justify-center p-9"
+                >
+                  <Image
+                    width={120}
+                    height={120}
+                    src={`/skills/skills${idx + 1}.png`}
+                    alt={`skills${idx + 1}`}
+                  />
+                  <h1 className="my-2 font-semibold text-center">{item}</h1>
+                </motion.div>
+              ))
+            : null}
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default Skills;

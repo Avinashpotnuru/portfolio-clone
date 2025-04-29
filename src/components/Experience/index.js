@@ -1,10 +1,13 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { experienceData } from "@/src/Data";
 // third party imports
 import { motion } from "framer-motion";
+import ExperienceInfo from "../ExperienceInfo";
 
-const Experience = () => {
+
+
+const Experience = memo(() => {
   return (
     <div className="flex flex-col items-center justify-center my-5">
       <motion.h1
@@ -12,39 +15,17 @@ const Experience = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.7 }}
         className="text-3xl text-[#0863bf] font-medium font-roboto-slab my-3 md:my-6"
+        aria-label="Experience Section"
       >
         Experience
       </motion.h1>
       <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-2 lg:w-[80%]">
-        {experienceData.map((val, id) => {
-          return (
-            <motion.div
-              initial={{
-                scale: 0,
-                opacity: 0,
-                translateX: id % 2 == 1 ? "-100vh" : "100vh",
-              }}
-              animate={{ scale: 1, opacity: 1, translateX: 0 }}
-              transition={{ delay: 0.8, duration: 1.1 }}
-              key={val.id}
-              className="px-4 py-5 mx-4 border-2 border-gray-400 rounded-md"
-            >
-              <h1 className="text-[23px] font-bold my-2 text-[#0863bf]">
-                {val.role}
-              </h1>
-              <h1 className="my-2 text-xl font-medium">{val.company}</h1>
-              <h1 className="my-2 text-base font-medium">{val.duration}</h1>
-              <ul className="mx-4 text-gray-700 list-disc ">
-                {val.description.map((item, idx) => (
-                  <li className="my-2" key={idx}>{item}</li>
-                ))}
-              </ul>
-            </motion.div>
-          );
-        })}
+        {experienceData.map((val, index) => (
+          <ExperienceInfo val={val} index={index} />
+        ))}
       </motion.div>
     </div>
   );
-};
+});
 
 export default Experience;

@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 const DetailsPopup = () => {
   const dispatch = useDispatch();
   const [isToggle, setToggle] = useState(false);
+  const [loading, setLoading] = useState(false);
   const detailToggle = useSelector(
     (state) => state.popSlice.detailsPopup.status
   );
@@ -23,49 +24,39 @@ const DetailsPopup = () => {
   const stringfyDetails = JSON.stringify(details);
 
   const postToBackend = () => {
-    // axios
-    //   .post("/api/add-client-details", {
-    //     ...details,
-    //     // headers: {
-    //     //   "Content-Type": "application/json",
-    //     // },
-    //     // body: JSON.stringify({ ...details }),
-    //   })
-    //   .then((res) => {
-    //     // console.log("res", res);
-    //     if (res.status) {
-    //       toast.success("details send successfully");
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     // console.log(err);
-    //     toast.error("details not send successfully");
-    //   });
-    console.log(details, "details");
-   
-   emailjs
-  .send("service_alz1vm5", "template_o9npyoh", details, {
-    publicKey: "QfEGbzlQ-M-R-nrmU",
-  })
-  .then(
-    (result) => {
-      if (result.status === 200 && result.text === "OK") {
-        toast.success("Details sent successfully");
-        setToggle(true);
-      } else {
-        toast.error("Something went wrong");
-      }
-    },
-    (error) => {
-      console.log(error.text);
-      toast.error("Failed to send details");
-    }
-  );}
+    setLoading(true);
+    emailjs
+      .send("service_alz1vm5", "template_o9npyoh", details, {
+        publicKey: "QfEGbzlQ-M-R-nrmU",
+      })
+      .then(
+        (result) => {
+          setLoading(false);
+          if (result.status === 200 && result.text === "OK") {
+            toast.success("Details sent successfully");
+            setToggle(true);
+          } else {
+            toast.error("Something went wrong");
+          }
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error.text);
+          toast.error("Failed to send details");
+        }
+      );
+  };
+  const detailList = [
+    { label: "Name", value: details?.firstName },
+    { label: "Email", value: details?.email },
+    { label: "Phone Number", value: details?.number },
+    { label: "Message", value: details?.message },
+  ];
 
   return (
     <Modal
       isOpen={detailToggle}
-      parentClasses={" flex justify-center items-center  w-full m-auto"}
+      parentClasses={"flex justify-center items-center  w-full m-auto"}
     >
       <div className="bg-white flex flex-col justify-center items-center rounded-lg shadow-lg h-[450px] w-[80%] sm:w-[50%] lg:w-[30%]  relative">
         <div
@@ -83,25 +74,15 @@ const DetailsPopup = () => {
             <>
               <h2 className="mb-4 text-xl font-bold text-center"> Details</h2>
               <dl>
-                <div className="mb-4">
-                  <dt className="font-bold">Name:</dt>
-                  <dd className="text-gray-800">{details?.firstName}</dd>
-                </div>
-                <div className="mb-4">
-                  <dt className="font-bold">Email:</dt>
-                  <dd className="text-gray-800">{details?.email}</dd>
-                </div>
-                <div className="mb-4">
-                  <dt className="font-bold">Phone Number:</dt>
-                  <dd className="text-gray-800">{details?.number}</dd>
-                </div>
-                <div className="mb-4">
-                  <dt className="font-bold">Message:</dt>
-                  <dd className="text-gray-800">{details?.message}</dd>
-                </div>
+                {detailList.map(({ label, value }) => (
+                  <div className="mb-4" key={label}>
+                    <dt className="font-bold">{label}:</dt>
+                    <dd className="text-gray-800">{value}</dd>
+                  </div>
+                ))}
                 <div className="flex items-center justify-center">
                   <button onClick={postToBackend} className="submitbutton">
-                    Conform
+                    {loading ? "Sending..." : "Conform"}
                   </button>
                 </div>
               </dl>
