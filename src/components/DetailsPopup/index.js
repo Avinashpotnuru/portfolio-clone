@@ -48,20 +48,26 @@ const DetailsPopup = () => {
     //     toast.error("details not send successfully");
     //   });
     console.log(details, "details");
-    emailjs
-      .send("service_qbh8knf", "template_zm935ps", details, "ZvDU2BAeaeAAet33r")
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Details sent successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Failed to send details");
-        }
-      );
-    setToggle(true);
-  };
+   
+   emailjs
+  .send("service_alz1vm5", "template_o9npyoh", details, {
+    publicKey: "QfEGbzlQ-M-R-nrmU",
+  })
+  .then(
+    (result) => {
+      if (result.status === 200 && result.text === "OK") {
+        toast.success("Details sent successfully");
+        setToggle(true);
+      } else {
+        toast.error("Something went wrong");
+      }
+    },
+    (error) => {
+      console.log(error.text);
+      toast.error("Failed to send details");
+    }
+  );
+
   return (
     <Modal
       isOpen={detailToggle}
