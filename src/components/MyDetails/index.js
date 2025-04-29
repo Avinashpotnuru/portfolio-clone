@@ -35,19 +35,19 @@ const MyDetails = () => {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.1, duration: 1 }}
-        className="sm:w-1/2  mx-auto p-5"
+        className="p-5 mx-auto sm:w-1/2"
       >
-        <h1 className="text-2xl  uppercase font-semibold my-1">About Me</h1>
+        <h1 className="my-1 text-2xl font-semibold uppercase">About Me</h1>
         <h1 className="text-3xl font-roboto-slab text-[#0863bf]  font-bold my-1 lg:text-[30px] lg:my-2">
           <span className="text-xl text-[black] font-semibold my-1 ">
             {"I'm "}
           </span>
           Avinash Potnuru
         </h1>
-        <h1 className="text-xl   font-medium my-1 lg:my-2">
+        <h1 className="my-1 text-xl font-medium lg:my-2">
           FrontEnd Developer
         </h1>
-        <h1 className="text-base   my-1">
+        <h1 className="my-1 text-base">
           Hello there Iam Avinash Potnuru, and I develop websites using the full
           stack. I have experience with web design and web development languages
           and frameworks, including HTML, CSS, Tailwind CSS, Bootstrap,

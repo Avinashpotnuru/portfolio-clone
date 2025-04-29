@@ -1,5 +1,4 @@
 import { AiFillHtml5 } from "react-icons/ai";
-
 import { DiCss3, DiReact, DiMongodb } from "react-icons/di";
 import { FaFigma, FaBootstrap } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
@@ -325,21 +324,38 @@ export const pages = {
 export const experienceData = [
   {
     id: 1,
-    role: "Junior React Js Developer",
-    company: "Tech Arion",
-    duration: "December 2022 - May 2023",
+    role: "React Developer",
+    company: "Wavetronic Solutions Pvt Ltd ",
+    duration: "June 2022 – Present",
     description: [
-      "Create a user interface specification of application in an Agile environment.",
-      "Implemented end-to-end UI design to provide user-friendly websites for the company and its clients.",
-      "Implemented Websites using Html, Tailwind CSS, Next JS, and Redux Toolkit with Responsive",
-      "Extensively used Git for version controlling and regularly pushed the code.",
+      "Collaborated with cross-functional teams in an Agile environment to deliver scalable web applications.",
+      "Designed and developed interactive user interfaces using React.js, Next.js, and TypeScript.",
+      "Built responsive and accessible websites using Tailwind CSS, Material UI, and HTML5.",
+      "Managed application state efficiently using Redux Toolkit for seamless user experiences.",
+      "Integrated RESTful APIs and ensured smooth data flow across components.",
+      "Used Git and GitHub for version control, code reviews, and team collaboration.",
     ],
   },
   {
     id: 2,
+    role: "UI Developer",
+    company: "Advanced Infoscan Pvt Ltd ",
+    duration: "March 2020 – April 2022",
+    description: [
+      "Built responsive, interactive UI components using React.js and Next.js, ensuring seamless user experience.",
+      "Designed and implemented custom component libraries with Material UI and Tailwind CSS to maintain design consistency.",
+      "Integrated REST APIs and React Query (useQuery) for optimized data fetching, reducing API response time by 30%.",
+      "Implemented JWT-based authentication for secure user sessions and data protection.",
+      "Collaborated with UI/UX designers and used Figma to ensure pixel-perfect design implementation.",
+      "Optimized website performance using Webpack and Lighthouse, improving load time and rendering efficiency.",
+      "Used Git and GitHub for version control, following Agile best practices for sprint planning and feature development.",
+    ],
+  },
+  {
+    id: 3,
     role: "Web Development Intern",
     company: "Internship Alerts ",
-    duration: "August 2022 - September 2022",
+    duration: "August 2019 - September 2019",
     description: [
       "Create a user interface specification of application in an Agile environment.",
       "Implemented end-to-end UI design to provide user-friendly websites for the company ",
@@ -362,6 +378,10 @@ export const skillsData = [
   "Figma",
   "Mongo Db",
   "Git",
+  "Typescript",
+  "Next Js",
+  "SASS/SCSS",
+  "Material UI",
 ];
 
 export const educationDetails = [

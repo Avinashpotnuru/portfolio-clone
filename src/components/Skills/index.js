@@ -7,7 +7,7 @@ import Image from "next/image";
 import { skillsData } from "@/src/Data";
 const Skills = () => {
   return (
-    <div className="flex flex-col justify-center items-center my-5 w-full mx-auto">
+    <div className="flex flex-col items-center justify-center w-full mx-auto my-5 overflow-hidden">
       <motion.h1
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -25,7 +25,7 @@ const Skills = () => {
         >
           Skills
         </motion.h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 w-full">
+        <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {skillsData.map((item, idx) => (
             <motion.div
               initial={{
@@ -36,7 +36,7 @@ const Skills = () => {
               animate={{ scale: 1, opacity: 1, translateX: 0 }}
               transition={{ delay: idx * 0.5, duration: idx * 0.3 }}
               key={idx}
-              className="p-9 flex flex-col justify-center items-center"
+              className="flex flex-col items-center justify-center p-9"
             >
               <Image
                 width={120}
@@ -44,7 +44,7 @@ const Skills = () => {
                 src={`/skills/skills${idx + 1}.png`}
                 alt={`skills${idx + 1}`}
               />
-              <h1 className="text-center my-2 font-semibold">{item}</h1>
+              <h1 className="my-2 font-semibold text-center">{item}</h1>
             </motion.div>
           ))}
         </div>
