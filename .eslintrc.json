@@ -1,6 +1,13 @@
+// {
+//   // "extends": "next/core-web-vitals"
+//   "extends": ["next/babel", "next/core-web-vitals"],
+//   "presets": ["next/babel"],
+//   "plugins": []
+// }
+
 {
-  // "extends": "next/core-web-vitals"
-  "extends": ["next/babel", "next/core-web-vitals"],
-  "presets": ["next/babel"],
-  "plugins": []
+  "extends": ["next", "eslint:recommended"],
+  "rules": {
+    // Add custom ESLint rules here if needed
+  }
 }
