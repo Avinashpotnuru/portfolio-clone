@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-
 import axios from "axios";
-
 import Modal from "../UI/Model";
-
 import emailjs from "@emailjs/browser";
 
 // third party imports
-
 import { AiOutlineClose } from "react-icons/ai";
-
 import { closeDetailsPopup } from "@/src/store/slices/popup";
-
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -66,7 +60,7 @@ const DetailsPopup = () => {
       console.log(error.text);
       toast.error("Failed to send details");
     }
-  );
+  );}
 
   return (
     <Modal
@@ -87,7 +81,7 @@ const DetailsPopup = () => {
         <div className="p-6 sm:p-4 mx-auto w-[80%]">
           {!isToggle ? (
             <>
-              <h2 className="text-xl font-bold mb-4 text-center"> Details</h2>
+              <h2 className="mb-4 text-xl font-bold text-center"> Details</h2>
               <dl>
                 <div className="mb-4">
                   <dt className="font-bold">Name:</dt>
@@ -105,7 +99,7 @@ const DetailsPopup = () => {
                   <dt className="font-bold">Message:</dt>
                   <dd className="text-gray-800">{details?.message}</dd>
                 </div>
-                <div className="flex justify-center items-center">
+                <div className="flex items-center justify-center">
                   <button onClick={postToBackend} className="submitbutton">
                     Conform
                   </button>
