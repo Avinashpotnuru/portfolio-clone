@@ -7,7 +7,7 @@ import ExperienceInfo from "../ExperienceInfo";
 
 
 
-const Experience = memo(() => {
+const ExperienceComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center my-5">
       <motion.h1
@@ -21,11 +21,15 @@ const Experience = memo(() => {
       </motion.h1>
       <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-2 lg:w-[80%]">
         {experienceData.map((val, index) => (
-          <ExperienceInfo val={val} index={index} />
+          <ExperienceInfo key={index} val={val} index={index} />
         ))}
       </motion.div>
     </div>
   );
-});
+};
+
+const Experience = memo(ExperienceComponent);
+
+
 
 export default Experience;

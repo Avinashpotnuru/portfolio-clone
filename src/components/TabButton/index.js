@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const TabButton = memo(({ label, index, activeTab, onClick }) => {
+const TabButtonComponent = ({ label, index, activeTab, onClick }) => {
   const isActive = activeTab === index;
   const buttonClasses = `py-2 px-4 text-sm font-roboto-slab ${
     isActive ? "border-[#0c7fb0] border-b-2 font-medium pb-3" : "text-black"
@@ -11,6 +11,8 @@ const TabButton = memo(({ label, index, activeTab, onClick }) => {
       {label}
     </button>
   );
-});
+};
+
+const TabButton = memo(TabButtonComponent);
 
 export default TabButton;

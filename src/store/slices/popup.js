@@ -15,7 +15,7 @@ const popSlice = createSlice({
       state.headerPopup.helperData = action.payload;
     },
 
-    closeHeaderPopup: (state, action) => {
+    closeHeaderPopup: (state) => {
       state.headerPopup.status = false;
       state.headerPopup.helperData = null;
     },
@@ -24,7 +24,7 @@ const popSlice = createSlice({
       state.contactPopup.helperData = action.payload;
     },
 
-    closeContactPopup: (state, action) => {
+    closeContactPopup: (state) => {
       state.contactPopup.status = false;
       state.contactPopup.helperData = null;
     },
@@ -35,7 +35,7 @@ const popSlice = createSlice({
       state.detailsPopup.helperData = action.payload;
     },
 
-    closeDetailsPopup: (state, action) => {
+    closeDetailsPopup: (state) => {
       state.detailsPopup.status = false;
       state.detailsPopup.helperData = null;
     },

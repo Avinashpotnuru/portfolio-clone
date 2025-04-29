@@ -28,7 +28,7 @@ const Footer = () => {
     <div className="bg-[#061820] w-full text-white py-5 ">
       <div className="sm:w-[80%] md:w-[70%] lg:w-[30%] sm:mx-auto">
         <div className="flex items-center justify-around py-5">
-          {navLinks.map((link) => (
+          {navLinks?.map((link) => (
             <h1
               key={link.href}
               className="hover:text-[#4e4ee1] hover:font-roboto-slab"
@@ -38,7 +38,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex items-center justify-around py-5">
-          {socialLinks.map((link) => (
+          {socialLinks?.map((link) => (
             <motion.a
               key={link.href}
               variants={iconVariants}

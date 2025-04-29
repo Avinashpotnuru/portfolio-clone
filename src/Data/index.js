@@ -1,5 +1,5 @@
 import { AiFillHtml5 } from "react-icons/ai";
-import { DiCss3, DiReact, DiMongodb } from "react-icons/di";
+import { DiCss3, DiReact } from "react-icons/di";
 import { FaFigma, FaBootstrap } from "react-icons/fa";
 import { SiMongodb } from "react-icons/si";
 
@@ -36,7 +36,6 @@ export const projectsData = [
     description: `Developed In this project, which uses HTML,Tailwind CSS, and React,Next.js. I have contributed
     information about myself, my education, and my projects and skills. Users can view this information in the app. This app
     also has responsive features.i have created Apis by using next.js Api and i have used mangoDb atlas cloud for sorting client details which are entered in this contact form. `,
-    category: "react",
     Link: "/projects/portfolio",
     deploylink: "https://avinashpotnuruportfolio.netlify.app/",
   },
@@ -213,7 +212,7 @@ const moviesZone = {
   keypoints: [
     `I used functional components entire this project.`,
     `Implemented different routes by using next.js pages`,
-    ,
+
     `Explored open-source APIs for movies database and picked TMDb APIs, movies by
     category, and movie search APIs.`,
     `I used the redux toolkit for state management for the entire project`,

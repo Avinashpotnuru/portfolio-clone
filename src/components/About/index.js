@@ -30,7 +30,7 @@ const About = () => {
 
         <h1 className="my-1 text-xl font-medium lg:my-2">FrontEnd Developer</h1>
         <h1 className="my-1 text-base">
-          Hi, I'm Avinash Potnuru a Frontend Developer with 4.4 years of
+          Hi, I&apos;m Avinash Potnuru, a Frontend Developer with 4.4 years of
           experience building fast, responsive, and user-focused web
           applications. I specialize in React.js, Next.js, TypeScript, Tailwind
           CSS, and Material UI, and I create clean, accessible UIs with a focus

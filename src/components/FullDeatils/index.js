@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import Experience from "../Experience";
 import Skills from "../Skills";
