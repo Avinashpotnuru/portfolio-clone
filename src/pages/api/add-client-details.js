@@ -1,8 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
 import { Details } from "@/src/model/model";
 import mongoose from "mongoose";
 
+// Connect to MongoDB
 mongoose
   .connect(
     "mongodb+srv://avinash:LE9e9K7eKwrmFGyA@cluster0.istpydn.mongodb.net/clientdetails",
@@ -11,22 +10,23 @@ mongoose
       useUnifiedTopology: true,
     }
   )
-  .then(() => console.log("connect"))
-  .catch((err) => console.log(err));
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.log("MongoDB connection error:", err));
 
-export default function (req, res) {
+// Named export function to resolve ESLint warning
+export default async function addClientDetailsHandler(req, res) {
   if (req.method === "POST") {
-    const postData = async () => {
-      const { firstName, email, number, message } = req.body;
-      try {
-        const client = new Details({ firstName, email, number, message });
-        await client.save();
-        res.json(await Details.find());
-      } catch (err) {
-        //console.log(err);
-      }
-    };
-    postData();
+    const { firstName, email, number, message } = req.body;
+    try {
+      const client = new Details({ firstName, email, number, message });
+      await client.save();
+      const allClients = await Details.find();
+      return res.status(200).json(allClients);
+    } catch (err) {
+      console.error("Error saving client details:", err);
+      return res.status(500).json({ error: "Failed to save client details" });
+    }
+  } else {
+    return res.status(405).json({ error: "Method not allowed" });
   }
-  // res.status(200).json({ name: "avinash" });
 }

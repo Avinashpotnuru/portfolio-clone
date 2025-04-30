@@ -37,24 +37,24 @@ const cardIconVariants = {
   },
 };
 
-const contactCard = {
-  hidden: {
-    opacity: 0,
-    scale: 0,
-    x: "-100vh",
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    x: 0,
-    transition: {
-      duration: 0.9,
-      delay: 1.2,
-      type: "spring",
-      stiffness: 60,
-    },
-  },
-};
+// const contactCard = {
+//   hidden: {
+//     opacity: 0,
+//     scale: 0,
+//     x: "-100vh",
+//   },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     x: 0,
+//     transition: {
+//       duration: 0.9,
+//       delay: 1.2,
+//       type: "spring",
+//       stiffness: 60,
+//     },
+//   },
+// };
 
 const Contact = () => {
   const dispatch = useDispatch();

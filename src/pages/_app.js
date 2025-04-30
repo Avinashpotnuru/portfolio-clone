@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "../store/store";
 import Layout from "../components/Layout";
 import Head from "next/head";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactPopup = dynamic(() => import("../components/ContactPopup"));

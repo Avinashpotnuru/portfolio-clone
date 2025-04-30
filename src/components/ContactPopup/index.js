@@ -33,7 +33,7 @@ const ContactPopup = () => {
 
   // console.log("err", errors);
 
-  const [data, setData] = useState("");
+  const [, setData] = useState("");
   const contactToggle = useSelector(
     (state) => state.popSlice.contactPopup.status
   );
@@ -44,7 +44,7 @@ const ContactPopup = () => {
     return phoneNumber?.length === 10 || "Phone number must be 10 digits";
   };
 
-  const onSubmit = (data, e) => {
+  const onSubmit = (data) => {
     console.log(data);
     setData(data);
     dispatch(openDetailsPopup(data));

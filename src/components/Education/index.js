@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import EducationDetail from "../EducationDetail";
 import { memo } from "react";
 
-const Education = memo(() => {
+const EducationComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full mx-auto my-5 sm:my-8">
       <motion.h1
@@ -16,7 +16,7 @@ const Education = memo(() => {
         Education Details
       </motion.h1>
       <div className="flex flex-col border-2 border-gray-500 rounded-md  w-[95%] mx-auto sm:w-[90%] px-2 sm:px-5 ">
-        <div className="grid grid-cols-1    divide-y-[2px] divide-gray-400 ">
+        <div className="grid grid-cols-1 divide-y-[2px] divide-gray-400 ">
           {educationDetails.map((val, index) => (
             <EducationDetail val={val} idx={index} key={index} />
           ))}
@@ -24,6 +24,8 @@ const Education = memo(() => {
       </div>
     </div>
   );
-});
+};
+
+const Education = memo(EducationComponent);
 
 export default Education;

@@ -45,11 +45,11 @@ const MyDetails = () => {
           <span className="text-xl text-[black] font-semibold my-1 ">
             {"I'm "}
           </span>
-          Avinash Potnuru 
+          Avinash Potnuru
         </h1>
         <h1 className="my-1 text-xl font-medium lg:my-2">FrontEnd Developer</h1>
         <h1 className="my-1 text-base">
-          Hello! I'm Avinash Potnuru, a Frontend Developer with 4.4 years of
+          Hello! I&#39;m Avinash Potnuru, a Frontend Developer with 4.4 years of
           experience crafting responsive, accessible, and user-friendly web
           interfaces. I specialize in building modern UI experiences using
           React.js, Next.js, TypeScript, and JavaScript. My expertise includes

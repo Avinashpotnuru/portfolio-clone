@@ -1,10 +1,10 @@
 import React, { memo } from "react";
-import React from "react";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { skillsData } from "@/src/Data";
 
-const Skills = memo(() => {
+const SkillsComponent = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full mx-auto my-5 overflow-hidden">
       <motion.h1
@@ -52,6 +52,10 @@ const Skills = memo(() => {
       </div>
     </div>
   );
-});
+};
+
+const Skills = memo(SkillsComponent);
+
+
 
 export default Skills;

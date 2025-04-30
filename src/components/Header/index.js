@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 import { RiInformationLine, RiContactsBookLine } from "react-icons/ri";
-import { GrCertificate } from "react-icons/gr";
 import { FaRegUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { CiMedal } from "react-icons/ci";
@@ -31,8 +30,8 @@ const Header = () => {
 
   // const openToggle = useSelector((state) => state.headerPopup.status);
   return (
-    <div className="shadow-md w-full relative ">
-      <div className="flex items-center justify-between  bg-white py-4 md:px-10 px-7 fixed top-0 left-0 right-0 z-10">
+    <div className="relative w-full shadow-md ">
+      <div className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between py-4 bg-white md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
   text-gray-800"
@@ -47,7 +46,7 @@ const Header = () => {
 
         <div
           onClick={() => setOpen(!open)}
-          className="md:hidden transition-all duration-500 "
+          className="transition-all duration-500 md:hidden "
         >
           {!open ? <AiOutlineMenu /> : <AiOutlineClose />}
         </div>
@@ -81,7 +80,7 @@ const Header = () => {
               >
                 <Link
                   href={link.link}
-                  className="text-gray-800 hover:text-gray-400 duration-500"
+                  className="text-gray-800 duration-500 hover:text-gray-400"
                 >
                   {link.name}
                 </Link>
