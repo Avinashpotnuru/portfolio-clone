@@ -7,6 +7,7 @@ const ProjectCard = ({ data }) => {
   // console.log(data);
   return (
     <motion.div
+      viewport={{ once: true, amount: 0.5 }}
       whileHover={{ scale: 1.05 }}
       initial={{
         opacity: 0,
